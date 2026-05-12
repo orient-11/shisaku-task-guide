@@ -130,26 +130,6 @@
       color: #9e9e9e;
     }
 
-    /* ===== サブナビ（試作チーム内） ===== */
-    .sub-nav {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
-    }
-    .sub-nav a {
-      padding: 7px 20px;
-      border-radius: 20px;
-      font-size: .9rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: background .2s, color .2s;
-    }
-    .sub-nav a.manager { background: #fff3e0; color: #e65100; border: 1.5px solid #e65100; }
-    .sub-nav a.manager:hover { background: #e65100; color: #fff; }
-    .sub-nav a.member  { background: #e8f5e9; color: #2e7d32; border: 1.5px solid #2e7d32; }
-    .sub-nav a.member:hover  { background: #2e7d32; color: #fff; }
-
     /* ===== サブセクション見出し ===== */
     .sub-heading {
       font-size: 1.05rem;
@@ -158,7 +138,6 @@
       border-radius: 6px;
       margin: 28px 0 16px;
     }
-    .sub-heading.manager { background: #fff3e0; color: #e65100; border-left: 4px solid #e65100; }
     .sub-heading.member  { background: #e8f5e9; color: #2e7d32; border-left: 4px solid #2e7d32; }
 
     /* ===== ヒント・注意 ===== */
@@ -325,159 +304,136 @@
   <div class="section-title team">🔧 試作チームメンバーの方へ</div>
   <div class="section-body">
 
-    <p>スプレッドシートの操作手順をまとめています。<br>担当する役割のボタンを押してください。</p>
+    <p>スプレッドシートの操作手順をまとめています。上から順に確認してください。</p>
 
     <hr class="divider">
 
-    <!-- サブナビ -->
-    <nav class="sub-nav">
-      <a class="manager" href="#manager">👔 課長・上長の方</a>
-      <a class="member"  href="#member">🔨 担当者（職人）の方</a>
-    </nav>
-
-
-    <!-- ── 課長向け ── -->
-    <div id="manager">
-      <div class="sub-heading manager">👔 課長・上長の方</div>
-
-      <!-- STEP 1 -->
-      <div class="step">
-        <div class="step-badge orange">1</div>
-        <div class="step-content">
-          <h3>Google Chatで新着依頼を確認する</h3>
-          <ul>
-            <li>フォームが送信されるとChatに自動通知が届く</li>
-            <li>通知内容：依頼ID・ブランド・年度・依頼元・納期・優先度</li>
-            <li>通知のリンクからスプレッドシートを開ける</li>
-          </ul>
-          <div class="tip yellow">💡 Chat通知は納期3日前にも自動で届きます</div>
-        </div>
+    <!-- STEP 1 -->
+    <div class="step">
+      <div class="step-badge green">1</div>
+      <div class="step-content">
+        <h3>Google Chatで新着依頼を確認する</h3>
+        <ul>
+          <li>フォームが送信されるとChatに自動通知が届く</li>
+          <li>通知内容：依頼ID・ブランド・年度・依頼元・納期・優先度</li>
+          <li>通知のリンクからスプレッドシートを開ける</li>
+        </ul>
+        <div class="tip yellow">💡 Chat通知は納期3日前にも自動で届きます</div>
       </div>
+    </div>
 
-      <!-- STEP 2 -->
-      <div class="step">
-        <div class="step-badge orange">2</div>
-        <div class="step-content">
-          <h3>依頼一覧で優先度・担当者を設定する</h3>
-          <ul>
-            <li>スプレッドシートの「依頼一覧」シートを開く</li>
-            <li>新着依頼（依頼番号が自動入力済み）を確認する</li>
-            <li>L列「優先度」をドロップダウンで設定する（至急・高・中・低）</li>
-            <li>H列「依頼者名」の隣に担当者名を入力する ※担当者列は今後追加予定</li>
-          </ul>
-          <div class="tip">💡 優先度は希望納期の営業日数から自動設定されます（5営業日以内→至急／10営業日以内→高）。必要に応じて修正してください。</div>
-        </div>
+    <!-- STEP 2 -->
+    <div class="step">
+      <div class="step-badge green">2</div>
+      <div class="step-content">
+        <h3>依頼一覧で優先度・担当者を確認する</h3>
+        <ul>
+          <li>スプレッドシートの「依頼一覧」シートを開く</li>
+          <li>新着依頼（依頼番号が自動入力済み）を確認する</li>
+          <li>L列「優先度」をドロップダウンで確認・修正する（至急・高・中・低）</li>
+        </ul>
+        <div class="tip">💡 優先度は希望納期の営業日数から自動設定されます（5営業日以内→至急／10営業日以内→高）。必要に応じて修正してください。</div>
       </div>
+    </div>
 
-      <!-- STEP 3 -->
-      <div class="step">
-        <div class="step-badge orange">3</div>
-        <div class="step-content">
-          <h3>ガントチャートで全体スケジュールを確認する</h3>
-          <ul>
-            <li>「ガントチャート」シートを開く</li>
-            <li>優先度順に未完了タスクが一覧表示される</li>
-            <li>納期・材料提供予定日がバーで表示される</li>
-            <li>上部メニュー「📅 ガントチャートを更新」を実行すると最新データに更新される</li>
-          </ul>
-        </div>
+    <!-- STEP 3 -->
+    <div class="step">
+      <div class="step-badge green">3</div>
+      <div class="step-content">
+        <h3>自分の担当を絞り込む</h3>
+        <ul>
+          <li>ヘッダー行の ▼ ボタン（フィルタ）をクリックする</li>
+          <li>担当者列で自分の名前だけにチェックを入れる</li>
+          <li>自分宛の依頼だけが表示される</li>
+        </ul>
+        <div class="tip green">💡 フィルタ表示は「表示」→「フィルタ表示」→「新しいフィルタ表示を作成」から保存できます。次回から1クリックで切り替えられます。</div>
       </div>
+    </div>
 
-      <!-- STEP 4 -->
-      <div class="step">
-        <div class="step-badge orange">4</div>
-        <div class="step-content">
-          <h3>週次メンテナンス（週1回・金曜など）</h3>
-          <ul>
-            <li>上部メニュー「📦 完了済み依頼をアーカイブに移動」を実行する</li>
-            <li>→ ステータスが「完了」の行が「完了アーカイブ」シートに移動し、依頼一覧がスッキリする</li>
-            <li>ダッシュボードで来週の状況を確認する</li>
-            <li>「3日以内に納期が来る依頼」欄・「至急・高」の件数をチェックする</li>
-          </ul>
-          <div class="tip red">⚠️ アーカイブに移動したデータは「完了アーカイブ」シートに残ります。消えるわけではありません。</div>
-        </div>
+    <!-- STEP 4 -->
+    <div class="step">
+      <div class="step-badge green">4</div>
+      <div class="step-content">
+        <h3>作業を始めるとき</h3>
+        <ul>
+          <li>該当する行の J列「ステータス」をクリックする</li>
+          <li>「作業中」を選ぶ</li>
+          <li>行が緑色に変わる　→　Google Chatに通知が届く</li>
+        </ul>
       </div>
+    </div>
 
-    </div><!-- /manager -->
-
-    <hr class="divider">
-
-    <!-- ── 担当者向け ── -->
-    <div id="member">
-      <div class="sub-heading member">🔨 担当者（職人）の方</div>
-
-      <!-- STEP 1 -->
-      <div class="step">
-        <div class="step-badge green">1</div>
-        <div class="step-content">
-          <h3>自分の担当を確認する</h3>
-          <ul>
-            <li>スプレッドシートの「依頼一覧」シートを開く</li>
-            <li>ヘッダー行の ▼ ボタン（フィルタ）をクリックする</li>
-            <li>担当者列で自分の名前だけにチェックを入れる</li>
-            <li>自分宛の依頼だけが表示される</li>
-          </ul>
-          <div class="tip green">💡 フィルタ表示は「表示」→「フィルタ表示」→「新しいフィルタ表示を作成」から保存できます。次回から1クリックで切り替えられます。</div>
-        </div>
+    <!-- STEP 5 -->
+    <div class="step">
+      <div class="step-badge green">5</div>
+      <div class="step-content">
+        <h3>工程が複数あるとき（サブタスク）</h3>
+        <ul>
+          <li>例：1つの依頼に「裁断 → 縫製 → 仕上げ」の3工程がある場合</li>
+          <li>「サブタスク」シートを開く</li>
+          <li>A列「親依頼番号」に依頼番号（例：SIS-001）を入力する</li>
+          <li>工程ごとに1行ずつ入力する（内容・担当者・開始日・納期・ステータス）</li>
+          <li>各工程のステータスを「作業中」→「完了」と更新していく</li>
+        </ul>
+        <div class="tip green">💡 サブタスクは「すべて完了」して初めて親依頼も完了にしましょう。</div>
       </div>
+    </div>
 
-      <!-- STEP 2 -->
-      <div class="step">
-        <div class="step-badge green">2</div>
-        <div class="step-content">
-          <h3>作業を始めるとき</h3>
-          <ul>
-            <li>該当する行の J列「ステータス」をクリックする</li>
-            <li>「作業中」を選ぶ</li>
-            <li>行が緑色に変わる　→　Google Chatに通知が届く</li>
-          </ul>
-        </div>
+    <!-- STEP 6 -->
+    <div class="step">
+      <div class="step-badge green">6</div>
+      <div class="step-content">
+        <h3>作業が終わったとき</h3>
+        <ul>
+          <li>J列「ステータス」をクリックして「完了」を選ぶ</li>
+          <li>行がグレーに変わる　→　Google Chatに完了通知が届く</li>
+          <li>サブタスクがある場合は、全工程を「完了」にしてから親依頼も「完了」にする</li>
+        </ul>
       </div>
+    </div>
 
-      <!-- STEP 3 -->
-      <div class="step">
-        <div class="step-badge green">3</div>
-        <div class="step-content">
-          <h3>工程が複数あるとき（サブタスク）</h3>
-          <ul>
-            <li>例：1つの依頼に「裁断 → 縫製 → 仕上げ」の3工程がある場合</li>
-            <li>「サブタスク」シートを開く</li>
-            <li>A列「親依頼番号」に依頼番号（例：SIS-001）を入力する</li>
-            <li>工程ごとに1行ずつ入力する（内容・担当者・開始日・納期・ステータス）</li>
-            <li>各工程のステータスを「作業中」→「完了」と更新していく</li>
-          </ul>
-          <div class="tip green">💡 サブタスクは「すべて完了」して初めて親依頼も完了にしましょう。</div>
-        </div>
+    <!-- STEP 7 -->
+    <div class="step">
+      <div class="step-badge green">7</div>
+      <div class="step-content">
+        <h3>ガントチャートで全体スケジュールを確認する</h3>
+        <ul>
+          <li>「ガントチャート」シートを開く</li>
+          <li>優先度順に未完了タスクが一覧表示される</li>
+          <li>納期・材料提供予定日がバーで表示される</li>
+          <li>上部メニュー「📅 ガントチャートを更新」を実行すると最新データに更新される</li>
+        </ul>
       </div>
+    </div>
 
-      <!-- STEP 4 -->
-      <div class="step">
-        <div class="step-badge green">4</div>
-        <div class="step-content">
-          <h3>作業が終わったとき</h3>
-          <ul>
-            <li>J列「ステータス」をクリックして「完了」を選ぶ</li>
-            <li>行がグレーに変わる　→　Google Chatに完了通知が届く</li>
-            <li>サブタスクがある場合は、全工程を「完了」にしてから親依頼も「完了」にする</li>
-          </ul>
-        </div>
+    <!-- STEP 8 -->
+    <div class="step">
+      <div class="step-badge green">8</div>
+      <div class="step-content">
+        <h3>週次メンテナンス（週1回・金曜など）</h3>
+        <ul>
+          <li>上部メニュー「📦 完了済み依頼をアーカイブに移動」を実行する</li>
+          <li>→ ステータスが「完了」の行が「完了アーカイブ」シートに移動し、依頼一覧がスッキリする</li>
+          <li>ダッシュボードで来週の状況を確認する</li>
+          <li>「3日以内に納期が来る依頼」欄・「至急・高」の件数をチェックする</li>
+        </ul>
+        <div class="tip red">⚠️ アーカイブに移動したデータは「完了アーカイブ」シートに残ります。消えるわけではありません。</div>
       </div>
+    </div>
 
-      <!-- STEP 5 -->
-      <div class="step">
-        <div class="step-badge green">5</div>
-        <div class="step-content">
-          <h3>気づき・ノウハウはナレッジメモへ</h3>
-          <ul>
-            <li>「ナレッジメモ」シートを開く</li>
-            <li>カテゴリ・品番・課題・解決策を書き残す</li>
-            <li>G列「関連依頼番号」に依頼番号（例：KAD-001）を入れると後で探しやすい</li>
-          </ul>
-          <div class="tip green">💡 「次の人が同じ問題で困らないように」を意識して書きましょう。チームの財産になります。</div>
-        </div>
+    <!-- STEP 9 -->
+    <div class="step">
+      <div class="step-badge green">9</div>
+      <div class="step-content">
+        <h3>気づき・ノウハウはナレッジメモへ</h3>
+        <ul>
+          <li>「ナレッジメモ」シートを開く</li>
+          <li>カテゴリ・品番・課題・解決策を書き残す</li>
+          <li>G列「関連依頼番号」に依頼番号（例：KAD-001）を入れると後で探しやすい</li>
+        </ul>
+        <div class="tip green">💡 「次の人が同じ問題で困らないように」を意識して書きましょう。チームの財産になります。</div>
       </div>
-
-    </div><!-- /member -->
+    </div>
 
     <hr class="divider">
 
